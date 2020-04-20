@@ -1,0 +1,42 @@
+body {
+  overflow: hidden;
+}
+
+.container {
+  margin: 2rem;
+}
+
+.books {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.book {
+  position: relative;
+  display: block;
+  flex: 1 1 0px;
+  transition: transform 500ms;
+}
+
+.book:focus-within .book,
+.books:hover .book {
+  transform: translateX(-25%);
+}
+
+.book:focus ~ .book,
+.book:hover ~ .book {
+  transform: translateX(25%);
+}
+
+.books .book:focus,
+.books .book:hover {
+  transform: scale(1.25);
+  z-index: 1;
+}
+
+.book img {
+  display: block;
+  max-width: 100%;
+}
